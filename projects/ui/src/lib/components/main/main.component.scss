@@ -1,0 +1,49 @@
+$day-gap-size: 10px;
+$week-by-month: 5;
+$day-by-week: 7;
+
+$color--white: #FFFFFF;
+$color--neutral: #BFBFBF;
+$color--neutral-dark: #808080;
+$color--black: #494949;
+
+
+.month {
+    &.week-more {
+        $week-by-month: 6;
+        grid-template-rows: repeat($week-by-month, calc(95vh/$week-by-month - $day-gap-size));
+    }
+
+    display: grid;
+    grid-template-columns: repeat($day-by-week, 1fr);
+    grid-template-rows: repeat($week-by-month, calc(95vh/$week-by-month - $day-gap-size));
+    gap: $day-gap-size;
+
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.day {
+    &.other-month {
+        background-color: #C4C4C4;
+    }
+
+    &.current {
+        color: $color--white;
+        background-color: #848484;
+    }
+
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #B3B3B3;
+}
+
+.day span {
+    font-family: "Roboto", "Arial";
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: flex-end;
+}
+

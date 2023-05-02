@@ -1,0 +1,7 @@
+<div class="month" [ngClass]="{'week-more' : verifyWeekMore}">
+    <ng-container *ngFor="let day of page">
+        <div class="day"  [ngClass]="{'other-month': day.month !== currentMonth, 'current': day.number === currentDay && day.month === currentMonth}">
+            <span>{{ day.number }}</span>
+        </div>
+    </ng-container>
+</div>
