@@ -1,5 +1,6 @@
 export interface Month {
     number: number,
     name: string,
-    alias: string
+    alias: string,
+    numberOfDays: number
 }
